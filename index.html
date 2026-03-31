@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Inversión Inteligente</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        overflow: hidden;
+        background: linear-gradient(90deg, #f5f5f5, #e6e6e6);
+        color: #111;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        background: white;
+    }
+
+    .logo {
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .nav-links span {
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: calc(100vh - 60px);
+        padding: 0 80px;
+    }
+
+    button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        background-color: #f7931a;
+        color: white;
+        cursor: pointer;
+    }
+
+    .circle {
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, #f7931a, #ffb347);
+        border-radius: 50%;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">CryptoInvest</div>
+    <div class="nav-links">
+        <span>Inicio</span>
+        <span>Servicios</span>
+        <span>Precios</span>
+        <span>Contacto</span>
+    </div>
+</div>
+
+<div class="hero">
+    <div>
+        <h1>Consigue bitcoins a bajo precio</h1>
+        <p>Accede a oportunidades exclusivas en el mercado de criptomonedas.</p>
+        <button>Más información</button>
+    </div>
+
+    <div class="circle"></div>
+</div>
+
+<script>
+function startChaos() {
+    // Reemplaza TODO
+    document.body.innerHTML = `
+        <div style="
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            text-align:center;
+        ">
+            <img src="anormal.gif" style="width:400px;">
+            <h1 style="
+                color:white;
+                font-size:28px;
+                animation:blink 0.5s infinite;
+            ">
+                YOU ARE AN IDIOT
+            </h1>
+        </div>
+
+        <style>
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        </style>
+    `;
+
+    // 🔊 Crear audio NUEVO (esto lo arregla)
+    const audio = new Audio("YOU ARE AN IDIOTT.mp3");
+    audio.loop = true;
+    audio.play();
+
+    // Fondo intermitente
+    let isBlack = false;
+    setInterval(() => {
+        document.body.style.backgroundColor = isBlack ? "white" : "black";
+        isBlack = !isBlack;
+    }, 400);
+}
+
+// Click en todo lo clickeable
+document.querySelectorAll("button, span, .logo").forEach(el => {
+    el.addEventListener("click", startChaos);
+});
+</script>
+
+</body>
+</html>
